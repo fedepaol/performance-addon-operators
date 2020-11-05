@@ -6,6 +6,6 @@ function namespace() {
   # trying again with the pods, which are _usually_ reliable - but users can change them
   [ -z "${ns}" ] && ns=$( oc get pods -A -l name='performance-operator' -o=jsonpath='{.items[0].metadata.namespace}{"\n"}' )
   # if namespace not found, fallback to the old default
-  [ -z "${ns}" ] && ns="openshift-performance-addon"
+  [ -z "${ns}" ] && ns="openshift-performance-addon-operator"
   echo ${ns}
 }
